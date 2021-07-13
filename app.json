@@ -1,0 +1,50 @@
+{
+  "name": "RSS Feed Bot",
+  "description": "RSS Feed bot for telegram",
+  "keywords": [
+    "Rss",
+    "Feed",
+    "Bot"
+  ],
+  "success_url": "https://telegram.dog/heroku_pro_manager_bot",
+  "website": "https://github.com/vinayakext2/heroku-tg",
+  "repository": "https://github.com/vinayakext2/heroku-tg",
+  "env": {
+    "API_ID": {
+      "description": "Get this value from https://my.telegram.org",
+      "value": "True"
+    },
+    "API_HASH": {
+      "description": "Get this value from https://my.telegram.org",
+      "value": "True"
+    },
+    "FEED_URLS": {
+      "description": "RSS Feed URL of the site",
+      "value": "True"
+    },
+    "BOT_TOKEN": {
+      "description": "Get it by creating a bot on https://t.me/botfather",
+      "value": "True"
+    },
+    "LOG_CHANNEL": {
+      "description": "Telegram Channel ID where the bot is added and have write permission. You can use group ID too",
+      "value": "True"
+    },
+    "INTERVAL": {
+      "description": "Check Interval in seconds",
+      "value": "True"
+    },
+    "MAX_INSTANCES": {
+      "description": "Max parallel instance to be used",
+      "value": ""
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
+    }
+    ]
+}
