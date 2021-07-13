@@ -1,3 +1,6 @@
+
+<p><a href="https://heroku.com/deploy"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+
 # RSS Feed Telegram Bot
 A bot to post messages to Telegram Groups or Channels from rss feed.
 
