@@ -29,7 +29,7 @@ def create_feed_checker(feed_url):
     def check_feed():
         FEED = feedparser.parse(feed_url)
         entry = FEED.entries[0]
-        enid = {entry.id}
+        enid = entry.id
         if entry.id != db.get_link(feed_url).link:
                        # ↓ Edit this message as your needs.
             if "eztv.re" in enid or "yts.mx" in enid:   
