@@ -39,7 +39,7 @@ def create_feed_checker(feed_url):
             try:
                 app.send_message(log_channel, message)
                 db.update_link(feed_url, entry.id)
-                message = await message.reply_text("/leech@jarvisleechbot", quote=True)
+                message = message.reply_text("/leech@jarvisleechbot", quote=True)
             except FloodWait as e:
                 print(f"FloodWait: {e.x} seconds")
                 sleep(e.x)
