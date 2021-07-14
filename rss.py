@@ -31,7 +31,7 @@ def create_feed_checker(feed_url):
         entry = FEED.entries[0]
         if entry.id != db.get_link(feed_url).link:
                        # ↓ Edit this message as your needs.
-            if "eztv.re" in entry.id or "yts.mx" in entry.id:   
+            if "eztv.re" in {entry.id} or "yts.mx" in {entry.id}:   
                 message = f"/leech {entry.torrent_magneturi}"
             else:
                 message = f"/leech {entry.link}"
