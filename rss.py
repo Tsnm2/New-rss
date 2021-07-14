@@ -31,10 +31,10 @@ def create_feed_checker(feed_url):
         entry = FEED.entries[0]
         if entry.id != db.get_link(feed_url).link:
                        # ↓ Edit this message as your needs.
-            if "eztv.re" in {entry.id} or "yts.mx" in {entry.id}:   
-                message = f"/leech@jarvisleechbot {entry.torrent_magneturi}"
-            else:
-                message = f"/leech@jarvisleechbot {entry.link}"
+               if "eztv.re" in {entry.id} or "yts.mx" in {entry.id}:   
+                  message = f"/leech@jarvisleechbot {entry.torrent_magneturi}"
+               else:
+                  message = f"/leech@jarvisleechbot {entry.link}"
             try:
                 app.send_message(log_channel, message)
                 db.update_link(feed_url, entry.id)
