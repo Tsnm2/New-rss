@@ -1,2 +1,1 @@
-worker: python3 rss.py
-        python3 torrent.py
+worker: python3 main.py
