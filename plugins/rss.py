@@ -21,10 +21,6 @@ for feed_url in feed_urls:
     if db.get_link(feed_url) == None:
         db.update_link(feed_url, "*")
 
-
-app = Client(":memory:", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
-
-
 def create_feed_checker(feed_url):
     def check_feed():
         FEED = feedparser.parse(feed_url)
