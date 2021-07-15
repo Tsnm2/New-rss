@@ -17,7 +17,7 @@ log_channel = Config.LOG_CHANNEL
 check_interval = Config.INTERVAL
 max_instances = Config.MAX_INSTANCES
 
-app = pyrogram.Client(
+app = Client(
         "RSSBOT",
         bot_token=Config.BOT_TOKEN,
         api_id=Config.API_ID,
