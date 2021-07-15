@@ -1,5 +1,5 @@
 import os
-from pyrogram import client
+from pyrogram import Client
 from config import Config
 
 if __name__ == "__main__" :
