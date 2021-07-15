@@ -1,9 +1,6 @@
 import os
-
 import asyncio
-
 import pyrogram
-
 from pyrogram import Client, filters
 
 @pyrogram.Client.on_message(filters.document)
