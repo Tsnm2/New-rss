@@ -1,6 +1,7 @@
 import os
 import sys
 import feedparser
+import bot
 from sql import db
 from time import sleep, time
 from dotenv import load_dotenv
