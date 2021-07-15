@@ -7,6 +7,8 @@ if __name__ == "__main__" :
         root="plugins"
     )
 
-    app = Client(":memory:", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
+    app = Client(":memory:", bot_token=Config.BOT_TOKEN,
+        api_id=Config.API_ID,
+        api_hash=Config.API_HASH,)
 
     app.run()
