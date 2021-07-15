@@ -1,11 +1,5 @@
-import logging
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger(__name__)
-
 import os
-import pyrogram
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
+from pyrogram import Client
 from config import Config
 
 if __name__ == "__main__" :
