@@ -35,7 +35,7 @@ def create_feed_checker(feed_url):
             if "eztv.re" in enid or "yts.mx" in enid:   
                 message = f"{entry.torrent_magneturi}"
             if "watercache.nanobytes.org" in feed_url:
-                message = f"{entry.links[1].herf}"
+                message = f"{entry.herf}"
             else:
                 message = f"{entry.link}"
             try:
