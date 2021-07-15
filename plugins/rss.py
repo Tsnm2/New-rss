@@ -17,13 +17,6 @@ log_channel = Config.LOG_CHANNEL
 check_interval = Config.INTERVAL
 max_instances = Config.MAX_INSTANCES
 
-app = Client(
-        "RSSBOT",
-        bot_token=Config.BOT_TOKEN,
-        api_id=Config.API_ID,
-        api_hash=Config.API_HASH,
-        
-    )
 
 for feed_url in feed_urls:
     if db.get_link(feed_url) == None:
