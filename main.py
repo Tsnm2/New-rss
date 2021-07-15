@@ -1,6 +1,5 @@
 import os
 import pyrogram
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from config import Config
 
 if __name__ == "__main__" :
