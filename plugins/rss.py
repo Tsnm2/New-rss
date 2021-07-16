@@ -1,5 +1,6 @@
 import os
 import sys
+import pyrogram
 import feedparser
 import bot
 from sql import db
@@ -18,10 +19,11 @@ log_channel = Config.LOG_CHANNEL
 check_interval = Config.INTERVAL
 max_instances = Config.MAX_INSTANCES
 
-
 for feed_url in feed_urls:
     if db.get_link(feed_url) == None:
         db.update_link(feed_url, "*")
+
+app = pyrogram.Client("RSSBOT", bot_token=Config.BOT_TOKEN, api_id=Config.API_ID, api_hash=Config.API_HASH,)
 
 def create_feed_checker(feed_url):
     def check_feed():
