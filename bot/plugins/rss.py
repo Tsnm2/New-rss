@@ -1,29 +1,14 @@
-import os
-import sys
-import pyrogram
 import feedparser
-import bot
 from sql import db
-from time import sleep, time
-from dotenv import load_dotenv
-from pyrogram import Client, filters
+from time import sleep
 from pyrogram.errors import FloodWait
 from apscheduler.schedulers.background import BackgroundScheduler
-from config import Config
 
-api_id = Config.API_ID
-api_hash = Config.API_HASH
-feed_urls = Config.FEED_URLS
-bot_token = Config.BOT_TOKEN
-log_channel = Config.LOG_CHANNEL
-check_interval = Config.INTERVAL
-max_instances = Config.MAX_INSTANCES
+from bot import app, FEED_URLS, LOG_CHANNEL, INTERVAL, MAX_INSTANCES
 
-for feed_url in feed_urls:
+for feed_url in FEED_URLS:
     if db.get_link(feed_url) == None:
         db.update_link(feed_url, "*")
-
-app = pyrogram.Client("RSSBOT", bot_token=Config.BOT_TOKEN, api_id=Config.API_ID, api_hash=Config.API_HASH,)
 
 def create_feed_checker(feed_url):
     def check_feed():
@@ -39,7 +24,7 @@ def create_feed_checker(feed_url):
             else:
                 message = f"{entry.link}"
             try:
-                msg = app.send_message(log_channel, message)
+                msg = app.send_message(LOG_CHANNEL, message)
                 msg.reply_text("/leech@jarvisleechbot")
                 db.update_link(feed_url, entry.id)
                 
@@ -54,7 +39,7 @@ def create_feed_checker(feed_url):
 
 
 scheduler = BackgroundScheduler()
-for feed_url in feed_urls:
+for feed_url in FEED_URLS:
     feed_checker = create_feed_checker(feed_url)
-    scheduler.add_job(feed_checker, "interval", seconds=check_interval, max_instances=max_instances)
+    scheduler.add_job(feed_checker, "interval", seconds=INTERVAL, max_instances=MAX_INSTANCES)
 scheduler.start()
