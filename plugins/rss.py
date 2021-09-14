@@ -40,7 +40,7 @@ def create_feed_checker(feed_url):
                 message = f"{entry.link}"
             try:
                 msg = app.send_message(log_channel, message)
-                msg.reply_text("/leech@jarvisleechbot")
+                msg.reply_text("/gleech")
                 db.update_link(feed_url, entry.id)
                 
             except FloodWait as e:
