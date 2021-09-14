@@ -11,7 +11,7 @@ async def torrent(bot, update):
 
     chat_id=update.chat.id,
 
-    text="/leech",
+    text="/mirror",
 
     reply_to_message_id=update.message_id
 
